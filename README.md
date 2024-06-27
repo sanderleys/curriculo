@@ -1,2 +1,2 @@
 # curriculo
-Trabalho APO_Fundamentos de programação para internet
+Trabalho APO_Fundamentos de programação para internet.
