@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <div id="conteudo">
     <h1 class="titulo">Currículo de <?php echo $nome; ?></h1>
-    <p><strong>Data de Nascimento:</strong> <?php echo $dataNascimento; ?></p>
+    <p><strong>Data de Nascimento:</strong> <?php echo date("d/m/Y", strtotime($dataNascimento)); ?></p>
     <p><strong>Idade:</strong> <?php echo $idade; ?></p>
     <p><strong>Email:</strong> <?php echo $email; ?></p>
     <p><strong>Telefones:</strong> <?php echo implode(", ", $telefones); ?></p>
@@ -73,8 +73,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <?php foreach ($experiencias as $experiencia) { ?>
             <h3><?php echo $experiencia['empresa']; ?></h3>
             <p><strong>Cargo:</strong> <?php echo $experiencia['cargo']; ?></p>
-            <p><strong>Início:</strong> <?php echo $experiencia['inicio']; ?></p>
-            <p><strong>Fim:</strong> <?php echo $experiencia['fim']; ?></p>
+            <p><strong>Início:</strong> <?php echo date("d/m/Y", strtotime($experiencia['inicio'])); ?></p>
+            <p><strong>Fim:</strong> <?php echo date("d/m/Y", strtotime($experiencia['fim'])); ?></p>
             <p><strong>Principais Funções:</strong> <?php echo nl2br($experiencia['principaisFuncoes']); ?></p>
         <?php } ?>
     <?php } ?>
