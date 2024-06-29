@@ -27,10 +27,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
         }
     }
+    ob_start ();
 
-    ob_start();
     ?>
-    <h1>Currículo de <?php echo $nome; ?></h1>
+<!DOCTYPE html>
+    <html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/gerar_curriculo.css">
+    <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div id="conteudo">
+    <h1 class="titulo">Currículo de <?php echo $nome; ?></h1>
     <p><strong>Data de Nascimento:</strong> <?php echo $dataNascimento; ?></p>
     <p><strong>Idade:</strong> <?php echo $idade; ?></p>
     <p><strong>Email:</strong> <?php echo $email; ?></p>
@@ -70,10 +79,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <?php } ?>
     <?php } ?>
     <?php
-    $curriculoHtml = ob_get_clean();
+        $curriculoHtml = ob_get_clean();
 
-    echo $curriculoHtml;
-    // Para imprimir
-    echo '<script>window.print();</script>';
-}
-?>
+        echo $curriculoHtml;
+        // Para imprimir
+           echo '<script>window.print();</script>';
+        }
+    ?>
+    </div>
+<body>
+</html>
